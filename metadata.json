@@ -1,0 +1,6 @@
+{
+  "name": "1.ª Conferência Academia Prime Edge",
+  "description": "Website oficial da 1.ª Conferência da Academia Prime Edge — Do Conhecimento à Ação. 5 de Dezembro de 2026, Luanda, Angola.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
