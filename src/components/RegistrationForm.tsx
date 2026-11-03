@@ -574,11 +574,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
               <div className="space-y-2 pt-1 border-t border-slate-800/80">
                 <div className="flex items-start gap-2">
                   <span className="w-4 h-4 rounded-full bg-slate-800 text-[10px] flex items-center justify-center font-bold text-slate-300 shrink-0">1</span>
-                  <span>Envias os teus dados pelo WhatsApp oficial da Academia (+244 955 217 354).</span>
+                  <span>Envias os teus dados pelo WhatsApp oficial da Academia (+244 955 217 354 / +244 930 137 324).</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-4 h-4 rounded-full bg-slate-800 text-[10px] flex items-center justify-center font-bold text-slate-300 shrink-0">2</span>
-                  <span>A equipa da Academia Prime Edge confirma a disponibilidade de vagas e partilha os dados oficiais para liquidação.</span>
+                  <span>A equipa da Academia Prime Edge confirma a disponibilidade de vagas (restam apenas 25 vagas para este preço de lançamento) e partilha os dados oficiais para liquidação.</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="w-4 h-4 rounded-full bg-slate-800 text-[10px] flex items-center justify-center font-bold text-slate-300 shrink-0">3</span>

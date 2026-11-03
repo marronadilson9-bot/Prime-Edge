@@ -26,9 +26,9 @@ export const Tickets: React.FC<TicketsProps> = ({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#E5C365] uppercase mb-3">
-            <span>Valores de Lançamento</span>
+            <span>Valores de Lançamento · Promoção Especial</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase [text-wrap:balance]">
             Ingressos e Categorias
@@ -36,6 +36,14 @@ export const Tickets: React.FC<TicketsProps> = ({
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed [text-wrap:balance]">
             Escolhe a categoria adequada para ti e envia o teu pedido de inscrição. Ao seleccionar um ingresso, o formulário é preenchido de forma imediata.
           </p>
+
+          {/* Prominent Promotional Notice */}
+          <div className="mt-6 inline-flex items-center gap-2.5 px-4 sm:px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37]/15 via-[#E5C365]/20 to-[#D4AF37]/15 border border-[#D4AF37]/50 text-slate-100 text-xs sm:text-sm font-semibold shadow-lg shadow-[#D4AF37]/5">
+            <Sparkles className="w-4 h-4 text-[#E5C365] shrink-0" />
+            <span>
+              <strong className="text-[#E5C365] font-bold">Valores de Lançamento:</strong> Estes preços estão em promoção e só temos <strong>25 vagas</strong> para esse preço!
+            </span>
+          </div>
         </div>
 
         {/* 3 Ticket Cards */}
@@ -79,8 +87,8 @@ export const Tickets: React.FC<TicketsProps> = ({
                         {pkg.priceFormatted}
                       </span>
                     </div>
-                    <span className="text-xs text-slate-400 mt-1 block">
-                      Preço unitário de lançamento
+                    <span className="text-xs text-[#E5C365] font-semibold mt-1 block">
+                      Em promoção · Restam 25 vagas para este preço
                     </span>
                   </div>
 
@@ -126,7 +134,7 @@ export const Tickets: React.FC<TicketsProps> = ({
         <div className="max-w-3xl mx-auto bg-[#0C1733]/60 border border-slate-800 rounded-xl p-4 sm:p-5 flex items-start gap-3.5 text-xs text-slate-400">
           <Info className="w-4 h-4 text-[#E5C365] shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong className="text-slate-300">Informação oficial sobre os pacotes:</strong> Os preços indicados correspondem aos valores definidos para o lançamento dos ingressos. As vantagens e comodidades específicas de cada categoria (Normal, VIP e Premium) serão apresentadas e detalhadas assim que forem oficialmente confirmadas pela organização da Academia Prime Edge.
+            <strong className="text-slate-300">Informação oficial sobre os ingressos:</strong> Os preços indicados correspondem aos valores definidos para o lançamento em promoção, com um lote exclusivo de apenas 25 vagas para esse preço. As vantagens e comodidades específicas de cada categoria (Normal, VIP e Premium) serão apresentadas e detalhadas assim que forem oficialmente confirmadas pela organização da Academia Prime Edge.
           </p>
         </div>
       </div>

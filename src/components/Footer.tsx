@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   MessageCircle,
+  Phone,
   Mail,
   ArrowUp,
   MapPin,
@@ -54,10 +55,23 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-slate-200 hover:text-[#E5C365] transition-colors group"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span className="font-mono">{EVENT_DATA.officialWhatsAppFull}</span>
                   <span className="text-[10px] text-emerald-400 border border-emerald-800/60 bg-emerald-950/40 px-1.5 py-0.5 rounded">
                     WhatsApp Oficial
+                  </span>
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href={EVENT_DATA.officialPhoneSecondaryLink}
+                  className="flex items-center gap-2 text-slate-200 hover:text-[#E5C365] transition-colors group"
+                >
+                  <Phone className="w-4 h-4 text-[#E5C365] shrink-0" />
+                  <span className="font-mono">{EVENT_DATA.officialPhoneSecondaryFull}</span>
+                  <span className="text-[10px] text-[#E5C365] border border-[#D4AF37]/50 bg-[#D4AF37]/10 px-1.5 py-0.5 rounded">
+                    Linha Oficial
                   </span>
                 </a>
               </div>

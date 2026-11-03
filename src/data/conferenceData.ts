@@ -43,6 +43,9 @@ export const EVENT_DATA = {
   officialWhatsAppCountryCode: '244',
   officialWhatsAppFull: '+244 955 217 354',
   officialWhatsAppLink: 'https://wa.me/244955217354',
+  officialPhoneSecondary: '930137324',
+  officialPhoneSecondaryFull: '+244 930 137 324',
+  officialPhoneSecondaryLink: 'tel:+244930137324',
   officialEmail: 'contacto@academiaprimeedge.ao',
   socials: {
     facebook: 'https://facebook.com/academiaprimeedge',
@@ -146,7 +149,7 @@ export const SPEAKERS: Speaker[] = [
     fullName: 'Armando Zibungana',
     area: 'Música, ensino das artes e empreendedorismo.',
     bio: 'Armando Zibungana é músico, professor de artes e empresário.',
-    imageSrc: '/assets/aistudio/Armando_7090be9c.jpeg',
+    imageSrc: '/assets/aistudio/papa_Armando_ddc0a574.jpeg',
     initials: 'AZ',
   },
   {
@@ -175,7 +178,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: 'Quais são os preços dos ingressos?',
-    answer: 'Normal: 16.999 Kz; VIP: 25.999 Kz; Premium: 39.000 Kz.',
+    answer: 'Normal: 16.999 Kz; VIP: 25.999 Kz; Premium: 39.000 Kz. Estes preços estão em promoção de lançamento e só temos 25 vagas disponíveis para este valor.',
   },
   {
     question: 'Como posso solicitar a minha inscrição?',
