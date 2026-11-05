@@ -121,8 +121,72 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
+        {/* Prominent Descending Countdown Timer Card */}
+        <div className="w-full max-w-3xl bg-gradient-to-b from-[#0F1C3F] to-[#0A132C] border-2 border-[#D4AF37]/40 rounded-2xl p-5 sm:p-7 mb-10 shadow-2xl shadow-black/50 relative overflow-hidden">
+          {/* Subtle gold ambient glow in the card */}
+          <div className="absolute top-0 right-1/4 w-40 h-40 bg-[#D4AF37]/10 blur-3xl pointer-events-none rounded-full" />
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-800/80">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-[#14234C] border border-[#D4AF37]/30 flex items-center justify-center text-[#E5C365]">
+                <Clock className="w-4 h-4 animate-pulse" />
+              </div>
+              <div className="text-left">
+                <span className="block text-[11px] font-bold uppercase tracking-wider text-[#E5C365]">
+                  Contagem Decrescente Oficial
+                </span>
+                <span className="block text-xs sm:text-sm text-slate-200 font-semibold">
+                  Até 05 de Dezembro de 2026 às 09h00
+                </span>
+              </div>
+            </div>
+            <span className="text-[11px] text-slate-400 font-medium">
+              Edifício Kilamba · Luanda (WAT)
+            </span>
+          </div>
+
+          {/* 4 Luxury Countdown Blocks */}
+          <div className="grid grid-cols-4 gap-2.5 sm:gap-4">
+            <div className="bg-[#070D1E]/90 border border-slate-800 hover:border-[#D4AF37]/40 rounded-xl p-3 sm:p-4 text-center transition-all group">
+              <span className="block text-2xl sm:text-4xl md:text-5xl font-black text-white font-mono tabular-nums tracking-tight group-hover:text-[#E5C365] transition-colors">
+                {timeLeft.days}
+              </span>
+              <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#E5C365] mt-1">
+                Dias
+              </span>
+            </div>
+
+            <div className="bg-[#070D1E]/90 border border-slate-800 hover:border-[#D4AF37]/40 rounded-xl p-3 sm:p-4 text-center transition-all group">
+              <span className="block text-2xl sm:text-4xl md:text-5xl font-black text-white font-mono tabular-nums tracking-tight group-hover:text-[#E5C365] transition-colors">
+                {String(timeLeft.hours).padStart(2, '0')}
+              </span>
+              <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#E5C365] mt-1">
+                Horas
+              </span>
+            </div>
+
+            <div className="bg-[#070D1E]/90 border border-slate-800 hover:border-[#D4AF37]/40 rounded-xl p-3 sm:p-4 text-center transition-all group">
+              <span className="block text-2xl sm:text-4xl md:text-5xl font-black text-white font-mono tabular-nums tracking-tight group-hover:text-[#E5C365] transition-colors">
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </span>
+              <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#E5C365] mt-1">
+                Minutos
+              </span>
+            </div>
+
+            <div className="bg-[#070D1E]/90 border border-[#D4AF37]/40 rounded-xl p-3 sm:p-4 text-center transition-all group shadow-md shadow-[#D4AF37]/10">
+              <span className="block text-2xl sm:text-4xl md:text-5xl font-black text-[#E5C365] font-mono tabular-nums tracking-tight">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </span>
+              <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#E5C365] mt-1">
+                Segundos
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* 3 Core Action Buttons requested in Briefing */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-xl mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-xl mb-10">
           {/* 1. Quero participar */}
           <button
             onClick={onRegisterClick}
@@ -151,24 +215,14 @@ export const Hero: React.FC<HeroProps> = ({
           </button>
         </div>
 
-        {/* Slogan & Countdown Timer Row */}
-        <div className="w-full max-w-2xl flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-800/80 text-xs text-slate-400">
+        {/* Slogan & Confirmation Badge */}
+        <div className="w-full max-w-2xl flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 border-t border-slate-800/80 text-xs text-slate-400">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-slate-300">{EVENT_DATA.slogan}</span>
           </div>
-
-          {/* Tabular Countdown */}
-          <div className="flex items-center gap-3 font-mono tabular-nums text-slate-200">
-            <span className="text-[11px] uppercase tracking-wider text-slate-400 font-sans">Contagem:</span>
-            <div className="flex items-center gap-1.5">
-              <span className="bg-slate-900/90 border border-slate-800 px-2 py-1 rounded text-white font-bold">{timeLeft.days}d</span>
-              <span>:</span>
-              <span className="bg-slate-900/90 border border-slate-800 px-2 py-1 rounded text-white font-bold">{String(timeLeft.hours).padStart(2, '0')}h</span>
-              <span>:</span>
-              <span className="bg-slate-900/90 border border-slate-800 px-2 py-1 rounded text-white font-bold">{String(timeLeft.minutes).padStart(2, '0')}m</span>
-              <span>:</span>
-              <span className="bg-slate-900/90 border border-slate-800 px-2 py-1 rounded text-[#E5C365] font-bold">{String(timeLeft.seconds).padStart(2, '0')}s</span>
-            </div>
+          <div className="flex items-center gap-1.5 text-[#E5C365]">
+            <CheckCircle className="w-4 h-4" />
+            <span>Início oficial às 09h00 · Presencial</span>
           </div>
         </div>
       </div>
