@@ -25,36 +25,50 @@ export const Speakers: React.FC = () => {
           </p>
         </div>
 
-        {/* Speakers Grid - 4 consistent luxury cards */}
+        {/* Speakers Grid - Luxury responsive cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {SPEAKERS.map((speaker) => {
+          {SPEAKERS.map((speaker, index) => {
             const isExpanded = expandedBioId === speaker.id;
+            const isLastOdd = index === SPEAKERS.length - 1 && SPEAKERS.length % 2 !== 0;
 
             return (
               <div
                 key={speaker.id}
-                className="bg-[#0C1733]/80 border border-slate-800/90 hover:border-[#D4AF37]/35 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg"
+                className={`bg-[#0C1733]/80 border border-slate-800/90 hover:border-[#D4AF37]/35 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg ${
+                  isLastOdd ? 'md:col-span-2 md:max-w-2xl md:mx-auto md:w-full' : ''
+                }`}
               >
                 <div>
                   {/* Speaker Top: Photo & Headline Header */}
                   <div className="p-6 sm:p-7 flex flex-col sm:flex-row gap-5 items-start">
                     {/* Portrait with fallback */}
-                    <div className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-xl overflow-hidden shrink-0 border border-[#D4AF37]/30 bg-slate-900 shadow-md">
-                      <img
-                        src={speaker.imageSrc}
-                        alt={`Fotografia de ${speaker.displayName}`}
-                        className="w-full h-full object-cover object-top filter contrast-[1.05]"
-                        referrerPolicy="no-referrer"
-                        onError={(e) => {
-                          // Fallback container if image cannot be loaded
-                          (e.target as HTMLElement).style.display = 'none';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0C1733] via-transparent to-transparent opacity-60" />
-                      {/* Stylized fallback initials behind */}
-                      <div className="absolute inset-0 -z-10 flex items-center justify-center bg-gradient-to-br from-[#101F48] to-[#080E21] text-[#E5C365] font-black text-2xl">
-                        {speaker.initials}
-                      </div>
+                    <div className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-xl overflow-hidden shrink-0 border border-[#D4AF37]/30 bg-gradient-to-br from-[#101F48] to-[#080E21] shadow-md flex items-center justify-center">
+                      {speaker.imageSrc ? (
+                        <>
+                          <img
+                            src={speaker.imageSrc}
+                            alt={`Fotografia de ${speaker.displayName}`}
+                            className="w-full h-full object-cover object-top filter contrast-[1.05]"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              (e.target as HTMLElement).style.display = 'none';
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0C1733] via-transparent to-transparent opacity-60 pointer-events-none" />
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center p-3 text-center">
+                          <div className="w-12 h-12 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center mb-2 text-[#E5C365]">
+                            <User className="w-6 h-6" />
+                          </div>
+                          <span className="text-[#E5C365] font-black text-base tracking-wider font-mono">
+                            {speaker.initials}
+                          </span>
+                          <span className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">
+                            Foto a adicionar
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex-1 min-w-0">

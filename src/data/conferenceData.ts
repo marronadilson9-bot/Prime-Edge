@@ -9,6 +9,8 @@ export interface TicketPackage {
   price: number;
   priceFormatted: string;
   badge?: string;
+  includesPrefix?: string;
+  benefits: string[];
 }
 
 export interface Speaker {
@@ -60,6 +62,12 @@ export const TICKET_PACKAGES: TicketPackage[] = [
     name: 'Normal',
     price: 16999,
     priceFormatted: '16.999 Kz',
+    benefits: [
+      'Acesso à conferência',
+      'Participação nas palestras e sessões de aprendizagem',
+      'Material de apoio digital',
+      'Certificado de participação',
+    ],
   },
   {
     id: 'vip',
@@ -67,12 +75,29 @@ export const TICKET_PACKAGES: TicketPackage[] = [
     price: 25999,
     priceFormatted: '25.999 Kz',
     badge: 'Mais Procurado',
+    includesPrefix: 'Inclui tudo do pacote Normal, mais:',
+    benefits: [
+      'Assento reservado numa área privilegiada',
+      'Maior proximidade com os oradores',
+      'Networking exclusivo',
+      'Certificado de participação',
+    ],
   },
   {
     id: 'premium',
     name: 'Premium',
     price: 39000,
     priceFormatted: '39.000 Kz',
+    badge: 'Experiência Completa',
+    includesPrefix: 'Inclui todos os benefícios do VIP, mais:',
+    benefits: [
+      'Acesso premium à conferência',
+      'Área exclusiva',
+      'Coffee break',
+      'Oportunidade especial de networking com convidados e oradores',
+      'Kit exclusivo do evento',
+      'Certificado premium de participação',
+    ],
   },
 ];
 
@@ -161,6 +186,24 @@ export const SPEAKERS: Speaker[] = [
     imageSrc: '/assets/aistudio/Venancio_a08c6004.jpeg',
     initials: 'VV',
   },
+  {
+    id: 'delcio-machado',
+    displayName: 'Délcio Machado',
+    fullName: 'Délcio Machado',
+    area: 'Economia, empreendedorismo, gestão comercial e liderança empresarial.',
+    bio: 'Antes de ser empresário, sou filho da Kianda, esposo e pai de três lindas filhas. Sou um homem ligado à família e à minha terra, que procura viver com integridade, coragem, lealdade e espírito de serviço. Gosto de me relacionar com pessoas que tenham valores, honrem a sua palavra e acreditem que o sucesso só faz sentido quando também cria oportunidades e eleva os outros.\n\nSou economista de formação e iniciei o meu percurso profissional na Auto Zuid, Lda., ao lado do Professor Natalino Lavrador. Era uma pessoa bastante introvertida, mas trabalhar na área comercial obrigou-me a desabrochar, a comunicar e a aprender a vender. Foi nessa fase que assimilei uma das maiores lições da minha vida: “Um profissional que não sabe vender é um péssimo profissional.” Não se trata apenas de vender produtos, mas também de saber apresentar ideias, defender propostas e demonstrar o valor do nosso trabalho.\n\nMais tarde, a convite da Dr.ª Eliana dos Santos, abracei o projecto da Nova Sotecma, onde fui gestor de clientes faltosos. A minha função era negociar a regularização dos valores em atraso e criar planos de pagamento. Essa experiência ensinou-me a negociar com firmeza, equilíbrio e sensibilidade.\n\nPosteriormente, ingressei no então Serviço Nacional das Alfândegas, onde, durante cerca de quatro anos, fui responsável pelo património a nível nacional. Esta passagem reforçou o meu sentido de responsabilidade, disciplina e respeito pela gestão dos recursos do Estado.\n\nCom o tempo, percebi que não queria apenas integrar ou administrar estruturas existentes. Queria construir, criar valor e gerar emprego. Foi assim que o empreendedorismo deixou de ser uma possibilidade e se tornou uma convicção. Esse caminho passou pela NEWBE, na área do mobiliário, e pela FIX4U, Lda., também conhecida por FIX Angola, dedicada ao economato e ao fornecimento de material de escritório. Foram experiências determinantes para a visão que hoje materializo na D&WOOD.\n\nAinda assim, nenhuma empresa ou cargo me define por inteiro. Quero ser reconhecido, acima de tudo, como um homem que honrou a sua origem, cuidou da sua família, permaneceu fiel aos seus valores e utilizou o trabalho como instrumento de transformação.',
+    imageSrc: '/assets/aistudio/22_6e177e90.jpeg',
+    initials: 'DM',
+  },
+  {
+    id: 'manuel-mbangui',
+    displayName: 'Manuel Mbangui',
+    fullName: 'Manuel Mbungalanga Vianey Mbangui',
+    area: 'Director Geral do INEFOP · Emprego, formação profissional e empreendedorismo.',
+    bio: 'Manuel Mbungalanga Vianey Mbangui é o Director Geral do INEFOP (Instituto Nacional de Emprego e Formação Profissional).\n\nNascido no Huambo a 30 de Outubro de 1985, é licenciado em Contabilidade e Administração.\n\nPossui sólida qualificação e especializações: Especialista em Empregos Verdes pelo Centro de Formação Internacional de Turim da OIT (Organização Internacional do Trabalho); Coordenador Executivo do PAPE (Plano de Acção para a Promoção da Empregabilidade); Consultor e Especialista em Gestão de Projectos pela FGV-Brasil; Ponto Focal do Projecto de Apoio à Formação Profissional dos PALOP-TL; e Membro fundador da cooperativa de crédito do FAJE (Cooperafaje).\n\nNo seu percurso profissional, exerceu como Chefe de Departamento Nacional de Trabalho e Empreendedorismo (2014 a 2018), Contabilista/Administrador, Auxiliar de Contabilidade e Auditor de Stock.',
+    imageSrc: '/assets/aistudio/foto_a_usar_eb4bb5f1.png',
+    initials: 'MM',
+  },
 ];
 
 export const FAQS: FaqItem[] = [
@@ -190,7 +233,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: 'Quais são os benefícios específicos dos pacotes?',
-    answer: 'Os benefícios específicos de cada pacote serão apresentados quando forem oficialmente confirmados pela organização.',
+    answer: 'Normal (16.999 Kz): Acesso à conferência, participação nas palestras e sessões de aprendizagem, material de apoio digital e certificado de participação. VIP (25.999 Kz): Inclui tudo do Normal, mais assento reservado em área privilegiada, maior proximidade com os oradores, networking exclusivo e certificado. Premium (39.000 Kz): Inclui todos os benefícios do VIP, mais acesso premium, área exclusiva, coffee break, networking especial com convidados e oradores, kit exclusivo do evento e certificado premium.',
   },
 ];
 

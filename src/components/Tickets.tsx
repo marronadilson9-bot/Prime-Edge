@@ -92,18 +92,34 @@ export const Tickets: React.FC<TicketsProps> = ({
                     </span>
                   </div>
 
-                  <div className="py-4 border-t border-b border-slate-800/80 mb-6 text-xs text-slate-300 space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#E5C365] shrink-0" />
-                      <span>Acesso presencial ao evento</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#E5C365] shrink-0" />
-                      <span>Data: 5 de Dezembro de 2026</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#E5C365] shrink-0" />
-                      <span>Local: Edifício Kilamba, Luanda</span>
+                  {/* Package Benefits List */}
+                  <div className="py-5 border-t border-b border-slate-800/80 mb-6 text-xs text-slate-300">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-3">
+                      Benefícios Incluídos:
+                    </span>
+
+                    {pkg.includesPrefix && (
+                      <div className="mb-3 pb-2.5 border-b border-slate-800/60">
+                        <span className="text-[11px] font-semibold text-[#E5C365] block leading-tight">
+                          {pkg.includesPrefix}
+                        </span>
+                      </div>
+                    )}
+
+                    <ul className="space-y-2.5">
+                      {pkg.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#E5C365] shrink-0 mt-0.5" />
+                          <span className="leading-snug text-slate-200 font-medium">
+                            {benefit}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-4 pt-3 border-t border-slate-800/60 text-[11px] text-slate-400 flex items-center justify-between">
+                      <span>5 Dez 2026 · 09h00</span>
+                      <span>Edifício Kilamba</span>
                     </div>
                   </div>
                 </div>
@@ -134,7 +150,7 @@ export const Tickets: React.FC<TicketsProps> = ({
         <div className="max-w-3xl mx-auto bg-[#0C1733]/60 border border-slate-800 rounded-xl p-4 sm:p-5 flex items-start gap-3.5 text-xs text-slate-400">
           <Info className="w-4 h-4 text-[#E5C365] shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong className="text-slate-300">Informação oficial sobre os ingressos:</strong> Os preços indicados correspondem aos valores definidos para o lançamento em promoção, com um lote exclusivo de apenas 25 vagas para esse preço. As vantagens e comodidades específicas de cada categoria (Normal, VIP e Premium) serão apresentadas e detalhadas assim que forem oficialmente confirmadas pela organização da Academia Prime Edge.
+            <strong className="text-slate-300">Benefícios Oficiais Confirmados:</strong> Todos os pacotes incluem certificação oficial e materiais pedagógicos. Os preços indicados correspondem ao lote de lançamento em promoção, restrito a apenas 25 vagas para este preço especial. Garante a tua inscrição para assegurar a tua vaga com estas condições.
           </p>
         </div>
       </div>
